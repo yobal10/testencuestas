@@ -18,7 +18,7 @@
         <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6 leading-tight">
             Encuestas Electorales de candidatos y partidos políticos en el
             <span class="block relative mt-2">
-                <span class="relative z-10">Perú 2025</span>
+                <span class="relative z-10">Perú 2026</span>
                 <span class="absolute inset-x-0 bottom-2 h-4 bg-[#D91023] dark:bg-[#D91023]/30 -z-10 rounded"></span>
             </span>
         </h1>
