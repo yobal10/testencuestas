@@ -19,7 +19,7 @@ class RolesPermissionSeeder extends Seeder
     {
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        $superAdmin = Role::create(['name' => 'super_admin']);
+        $superAdmin = Role::firstOrCreate(['name' => 'super_admin']);
 
         $this->command->info('Generando permisos de Shield...');
         $this->command->call('shield:generate', [

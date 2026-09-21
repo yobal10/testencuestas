@@ -63,6 +63,21 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(Poll::class);
     }
 
+    public function universityMember()
+    {
+        return $this->hasOne(UniversityMember::class);
+    }
+
+    public function createdSurveys()
+    {
+        return $this->hasMany(Survey::class, 'created_by');
+    }
+
+    public function surveyResponses()
+    {
+        return $this->hasMany(SurveyResponse::class, 'respondent_id');
+    }
+
     /**
      * Get the user's initials
      */
