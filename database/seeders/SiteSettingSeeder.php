@@ -15,12 +15,12 @@ class SiteSettingSeeder extends Seeder
     {
         ModelsSiteSetting::create([
             'data' => [
-                'site_name' => 'Sistema de Encuestas Electorales 2026',
-                'description' => 'Plataforma para la gestión de encuestas electorales.',
+                'site_name' => 'Campus Pulse University',
+                'description' => 'Plataforma universitaria para encuestas académicas, mejora docente y experiencia estudiantil.',
                 'image' => '01KGJJ1PAJ6DH6T07V1DG551JB.jpg',
-                'email' => 'contacto@example.com',
-                'phone' => '+51 123 456 789',
-                'address' => 'Av. Principal 123, Ciudad, País',
+                'email' => 'contacto@campuspulse.edu',
+                'phone' => '+51 987 654 321',
+                'address' => 'Av. Universitaria 245, Lima, Perú',
                 'facebook' => 'https://facebook.com',
                 'twitter' => 'https://twitter.com',
                 'instagram' => 'https://instagram.com',

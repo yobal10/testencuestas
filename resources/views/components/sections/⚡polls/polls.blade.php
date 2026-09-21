@@ -1,11 +1,11 @@
 <section class="mx-auto max-w-7xl px-6 py-16">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-6">
         <div>
-            <span class="inline-block px-4 py-1 rounded-full bg-slate-900/5 dark:bg-white/10 text-slate-700 dark:text-white text-sm font-semibold mb-4">
-                Encuestas Destacadas
+            <span class="inline-block px-4 py-1 rounded-full bg-indigo-100 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 text-sm font-semibold mb-4">
+                Encuestas universitarias
             </span>
             <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white">
-                Participa y haz escuchar tu voz
+                Mejora continua en la experiencia académica
             </h2>
         </div>
 
@@ -27,7 +27,7 @@
 
                         <div class="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-black/10"></div>
                     @else
-                        <div class="absolute inset-0 bg-linear-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-700"></div>
+                        <div class="absolute inset-0 bg-linear-to-br from-indigo-100 to-slate-200 dark:from-slate-800 dark:to-slate-700"></div>
                     @endif
 
                     <div class="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
@@ -39,11 +39,11 @@
                     <div class="absolute top-4 right-4 z-10">
                         @if($poll->status === 'activo')
                             <span class="px-3 py-1 rounded-full bg-emerald-500 text-white text-xs font-semibold shadow">
-                                Encuesta activa
+                                Activa
                             </span>
                         @else
                             <span class="px-3 py-1 rounded-full bg-slate-700 text-white text-xs font-semibold shadow">
-                                Encuesta finalizada
+                                Finalizada
                             </span>
                         @endif
                     </div>
@@ -71,14 +71,14 @@
                         @if($poll->ends_at)
                             <div class="flex items-center justify-center gap-1">
                                 <flux:icon.calendar-1 class="w-4 h-4" />
-                                Finaliza el {{ $poll->ends_at->format('d/m/Y') }}
+                                Cierra {{ $poll->ends_at->format('d/m/Y') }}
                             </div>
                         @endif
                     </div>
 
                     <div class="mt-auto flex gap-2">
                         <flux:button type="button" icon="eye" variant="primary" href="{{ route('polls.show', $poll->slug) }}" class="w-full" wire:navigate>
-                            Ver Encuesta
+                            Ver encuesta
                         </flux:button>
                     </div>
                 </div>

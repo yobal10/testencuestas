@@ -1,10 +1,10 @@
 <section class="mx-auto max-w-7xl px-6 py-16">
     <div class="mb-12 text-center">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Encuestas Electorales
+            Encuestas universitarias
         </h1>
         <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Explora las encuestas electorales más recientes y participa votando por tus candidatos favoritos.
+            Explora evaluaciones de docentes, cursos, servicios y experiencia estudiantil para impulsar la mejora continua universitaria.
         </p>
     </div>
 

@@ -3,15 +3,15 @@
 
         <div class="mb-12 text-center">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Partidos Políticos
+                Facultades y unidades académicas
             </h1>
             <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Conoce los partidos políticos que participan en las encuestas electorales.
+                Conoce las áreas académicas que participan en la experiencia universitaria y en las encuestas de mejora institucional.
             </p>
         </div>
 
         <div class="mb-8">
-            <flux:input icon="magnifying-glass" wire:model.live.300ms="search" placeholder="Ingrese el nombre del partido político a buscar" clearable />
+            <flux:input icon="magnifying-glass" wire:model.live.300ms="search" placeholder="Buscar facultad o unidad académica" clearable />
         </div>
 
         <div class="grid gap-6 grid-cols-1 md:grid-cols-2">

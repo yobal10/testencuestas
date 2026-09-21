@@ -3,11 +3,11 @@
 
         <div class="text-center mb-16">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                Sobre Nosotros
+                Universidad y comunidad académica
             </h1>
-            <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <div class="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
             <p class="text-xl text-gray-600 dark:text-gray-100 max-w-3xl mx-auto">
-                Transformando la participación ciudadana en el proceso electoral peruano
+                Construimos espacios de opinión y mejora continua para docentes, estudiantes y directivos.
             </p>
         </div>
 
@@ -15,76 +15,76 @@
             <div class="space-y-6">
                 <div class="dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-slate-200 dark:border-gray-700">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
                         </div>
-                        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Nuestra Misión</h2>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Nuestra misión</h2>
                     </div>
                     <p class="text-gray-700 dark:text-gray-100 leading-relaxed">
-                        Este proyecto nace como una iniciativa personal para democratizar el acceso a las encuestas electorales en Perú. Creemos en la transparencia, la participación ciudadana y en el poder de la información para formar una opinión pública bien informada de cara a las elecciones 2026.
+                        Campus Pulse University transforma la retroalimentación institucional en decisiones concretas. A través de encuestas académicas, medimos la percepción sobre profesores, cursos, servicios, infraestructura y el clima universitario para mejorar continuamente la experiencia educativa.
                     </p>
                 </div>
 
                 <div class="dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-slate-200 dark:border-gray-700">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                         </div>
-                        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Nuestros Valores</h2>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">Nuestros valores</h2>
                     </div>
                     <ul class="space-y-3">
                         <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5 text-emerald-600 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700 dark:text-gray-100">Transparencia absoluta en resultados</span>
+                            <span class="text-gray-700 dark:text-gray-100">Transparencia en los resultados académicos</span>
                         </li>
                         <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5 text-emerald-600 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700 dark:text-gray-100">Participación libre y accesible</span>
+                            <span class="text-gray-700 dark:text-gray-100">Participación activa de estudiantes y docentes</span>
                         </li>
                         <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5 text-emerald-600 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700 dark:text-gray-100">Información objetiva y actualizada</span>
+                            <span class="text-gray-700 dark:text-gray-100">Mejora continua en la calidad educativa</span>
                         </li>
                         <li class="flex items-start">
-                            <svg class="w-5 h-5 text-green-600 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5 text-emerald-600 mr-3 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-700 dark:text-gray-100">Privacidad y seguridad del votante</span>
+                            <span class="text-gray-700 dark:text-gray-100">Privacidad y confianza en cada respuesta</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="space-y-6">
-                <div class="bg-linear-to-br from-blue-600 to-blue-700 rounded-2xl shadow-xl p-8 text-white">
-                    <h2 class="text-2xl font-bold mb-6">¿Por qué este proyecto?</h2>
-                    <div class="space-y-4 text-blue-50">
+                <div class="bg-linear-to-br from-indigo-700 to-indigo-900 rounded-2xl shadow-xl p-8 text-white">
+                    <h2 class="text-2xl font-bold mb-6">¿Por qué esta plataforma?</h2>
+                    <div class="space-y-4 text-indigo-50">
                         <p class="leading-relaxed">
-                            En Perú, el acceso a encuestas electorales confiables es limitado y muchas veces costoso. Este proyecto busca cambiar eso, ofreciendo una plataforma donde todos los peruanos puedan expresar su opinión sobre los candidatos de las elecciones 2026.
+                            Las universidades necesitan una herramienta ágil para escuchar a su comunidad, detectar prioridades y tomar decisiones con evidencia. Campus Pulse reúne métricas reales de satisfacción docente, cursos, servicios y bienestar académico en una sola experiencia digital.
                         </p>
                     </div>
                 </div>
 
                 <div class="dark:bg-slate-800 rounded-2xl shadow-xl p-8 border border-slate-200 dark:border-gray-700">
-                    <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Características Principales</h2>
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Características clave</h2>
                     <div class="grid grid-cols-2 gap-4">
                         <div class="text-center p-4 dark:bg-slate-700 rounded-lg">
-                            <div class="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">100%</div>
-                            <div class="text-sm text-slate-600 dark:text-slate-300">Gratuito</div>
+                            <div class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-1">100%</div>
+                            <div class="text-sm text-slate-600 dark:text-slate-300">Digital</div>
                         </div>
                         <div class="text-center p-4 dark:bg-slate-700 rounded-lg">
-                            <div class="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">24/7</div>
-                            <div class="text-sm text-slate-600 dark:text-slate-300">Disponible</div>
+                            <div class="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">24/7</div>
+                            <div class="text-sm text-slate-600 dark:text-slate-300">Acceso</div>
                         </div>
                         <div class="text-center p-4 dark:bg-slate-700 rounded-lg">
                             <div class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">
@@ -95,12 +95,12 @@
                             <div class="text-sm text-slate-600 dark:text-slate-300">Seguro</div>
                         </div>
                         <div class="text-center p-4 dark:bg-slate-700 rounded-lg">
-                            <div class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1">
+                            <div class="text-3xl font-bold text-amber-600 dark:text-amber-400 mb-1">
                                 <svg class="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
                                 </svg>
                             </div>
-                            <div class="text-sm text-slate-600 dark:text-slate-300">Participativo</div>
+                            <div class="text-sm text-slate-600 dark:text-slate-300">Inteligente</div>
                         </div>
                     </div>
                 </div>
