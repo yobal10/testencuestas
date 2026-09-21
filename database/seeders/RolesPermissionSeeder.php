@@ -30,12 +30,25 @@ class RolesPermissionSeeder extends Seeder
 
         $superAdmin->givePermissionTo(Permission::all());
 
-        $adminUser = User::create([
+        $adminUser = User::firstOrCreate(
+            ['email' => 'admin@example.com'],
+            [
             'name' => 'Admin',
-            'email' => 'admin@example.com',
             'email_verified_at' => now(),
             'status' => true,
-            'password' => Hash::make('123456789'),
+            'password' => Hash::make('12345678'),
+            'remember_token' => Str::random(10),
+            'two_factor_secret' => null,
+            'two_factor_recovery_codes' => null,
+            'two_factor_confirmed_at' => null,
+            ]
+        );
+
+        $adminUser->update([
+            'name' => 'Admin',
+            'email_verified_at' => now(),
+            'status' => true,
+            'password' => Hash::make('12345678'),
             'remember_token' => Str::random(10),
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
