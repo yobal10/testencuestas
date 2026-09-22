@@ -85,6 +85,7 @@ class AdminPanelProvider extends PanelProvider
                 ResizedColumnPlugin::make()
                     ->preserveOnDB(), // Enable database storage (optional)
                 FilamentBackgroundsPlugin::make()
+                    ->showAttribution(false)
                     ->imageProvider(
                         MyImages::make()
                             ->directory('images/auth')
