@@ -13,7 +13,7 @@
 
     @if($submitted)
         <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center text-emerald-900 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-100">
-            <flux:icon.circle-check class="mx-auto h-12 w-12" />
+            <flux:icon.check class="mx-auto h-12 w-12" />
             <h2 class="mt-4 text-2xl font-bold">Gracias por participar</h2>
             <p class="mt-2">Tu respuesta fue registrada y ayudará a mejorar la experiencia universitaria.</p>
         </div>
