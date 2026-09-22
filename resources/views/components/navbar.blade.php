@@ -9,7 +9,7 @@
         <flux:navbar class="-mb-px max-lg:hidden">
             <flux:navbar.item href="{{ route('home') }}" :current="request()->routeIs('home')" wire:navigate>Inicio</flux:navbar.item>
             <flux:navbar.item href="{{ route('polls') }}" :current="request()->routeIs('polls', 'polls.*')" wire:navigate>Encuestas</flux:navbar.item>
-            <flux:navbar.item href="{{ route('parties') }}" :current="request()->routeIs('parties', 'parties.*')" wire:navigate>Docentes</flux:navbar.item>
+            <flux:navbar.item href="{{ route('about') }}" :current="request()->routeIs('about')" wire:navigate>Comunidad académica</flux:navbar.item>
             <flux:navbar.item href="{{ route('about') }}" :current="request()->routeIs('about')" wire:navigate>Universidad</flux:navbar.item>
         </flux:navbar>
 
@@ -34,8 +34,8 @@
                 <flux:sidebar.item icon="clipboard-plus" href="{{ route('polls') }}" :current="request()->routeIs('polls', 'polls.*')" wire:navigate>
                     Encuestas
                 </flux:sidebar.item>
-                <flux:sidebar.item icon="users" href="{{ route('parties') }}" :current="request()->routeIs('parties', 'parties.*')" wire:navigate>
-                    Docentes
+                <flux:sidebar.item icon="users" href="{{ route('about') }}" :current="request()->routeIs('about')" wire:navigate>
+                    Comunidad académica
                 </flux:sidebar.item>
                 <flux:sidebar.item icon="academic-cap" href="{{ route('about') }}" :current="request()->routeIs('about')" wire:navigate>
                     Universidad

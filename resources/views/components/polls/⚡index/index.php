@@ -1,9 +1,8 @@
 <?php
 
-use App\Models\District;
-use App\Models\Poll;
-use App\Models\Province;
-use App\Models\Region;
+use App\Models\AcademicProgram;
+use App\Models\Faculty;
+use App\Models\Survey;
 use App\Support\SiteSettings;
 use Illuminate\View\View;
 use Livewire\Attributes\Computed;
@@ -17,75 +16,49 @@ new class extends Component
 
     public string $search = '';
 
-    public ?string $scope = null;
-    public ?int $regionId = null;
-    public ?int $provinceId = null;
-    public ?int $districtId = null;
+    public ?int $facultyId = null;
+    public ?int $programId = null;
 
     public function updatedScope()
     {
-        $this->reset(['regionId', 'provinceId', 'districtId']);
+        $this->reset('programId');
     }
 
-    public function updatedRegionId()
+    public function updatedFacultyId()
     {
-        $this->reset(['provinceId', 'districtId']);
-    }
-
-    public function updatedProvinceId()
-    {
-        $this->reset('districtId');
+        $this->reset('programId');
     }
 
     #[Computed]
-    public function regions()
+    public function faculties()
     {
-        return Region::orderBy('name')->pluck('name', 'id');
+        return Faculty::where('is_active', true)->orderBy('name')->pluck('name', 'id');
     }
 
     #[Computed]
-    public function provinces()
+    public function programs()
     {
-        if (!$this->regionId) return collect();
-        return Province::where('region_id', $this->regionId)->orderBy('name')->pluck('name', 'id');
+        if (!$this->facultyId) return collect();
+        return AcademicProgram::where('faculty_id', $this->facultyId)->where('is_active', true)->orderBy('name')->pluck('name', 'id');
     }
 
     #[Computed]
-    public function districts()
+    public function surveys()
     {
-        if (!$this->provinceId) return collect();
-        return District::where('province_id', $this->provinceId)->orderBy('name')->pluck('name', 'id');
-    }
-
-    #[Computed]
-    public function polls()
-    {
-        return Poll::actives()
+        return Survey::query()->whereIn('status', ['published', 'active'])
             ->when($this->search, fn ($q) =>
                 $q->where('title', 'like', "%{$this->search}%")
             )
-            ->when($this->scope, fn ($q) =>
-                $q->where('scope', $this->scope)
-            )
-            ->when($this->regionId, fn ($q) =>
-                $q->where('region_id', $this->regionId)
-            )
-            ->when($this->provinceId, fn ($q) =>
-                $q->where('province_id', $this->provinceId)
-            )
-            ->when($this->districtId, fn ($q) =>
-                $q->where('district_id', $this->districtId)
-            )
-            ->withCount('votes')
-            ->with(['category', 'candidates', 'region', 'province', 'district'])
-            ->orderByDesc('votes_count')
+            ->when($this->facultyId, fn ($q) => $q->where('faculty_id', $this->facultyId))
+            ->when($this->programId, fn ($q) => $q->where('program_id', $this->programId))
+            ->withCount('responses')->with(['faculty', 'program', 'period'])->orderByDesc('responses_count')
             ->latest()
             ->paginate(6);
     }
 
     public function resetFilters()
     {
-        $this->reset(['scope', 'regionId', 'provinceId', 'districtId', 'search']);
+        $this->reset(['facultyId', 'programId', 'search']);
     }
 
     public function render(): View

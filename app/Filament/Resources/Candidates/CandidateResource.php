@@ -18,6 +18,11 @@ use Filament\Tables\Table;
 
 class CandidateResource extends Resource
 {
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
+
     protected static ?string $model = Candidate::class;
 
     protected static ?int $navigationSort = 40;

@@ -43,26 +43,26 @@
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mt-16 max-w-4xl mx-auto">
             <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-white/70 dark:bg-white/10 backdrop-blur border border-slate-200 dark:border-white/10 shadow-sm dark:shadow-none">
                 <flux:icon.chart-no-axes-column-increasing />
-                <span class="text-2xl sm:text-3xl font-bold">{{ $totalPolls }}+</span>
-                <span class="text-sm text-slate-600 dark:text-white/70">Encuestas</span>
+                <span class="text-2xl sm:text-3xl font-bold">{{ $totalSurveys }}+</span>
+                <span class="text-sm text-slate-600 dark:text-white/70">Encuestas activas</span>
             </div>
 
             <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-white/70 dark:bg-white/10 backdrop-blur border border-slate-200 dark:border-white/10 shadow-sm dark:shadow-none">
                 <flux:icon.users />
-                <span class="text-2xl sm:text-3xl font-bold">{{ $totalVotes }}+</span>
+                <span class="text-2xl sm:text-3xl font-bold">{{ $totalResponses }}+</span>
                 <span class="text-sm text-slate-600 dark:text-white/70">Respuestas</span>
             </div>
 
             <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-white/70 dark:bg-white/10 backdrop-blur border border-slate-200 dark:border-white/10 shadow-sm dark:shadow-none">
                 <flux:icon.building-2 />
-                <span class="text-2xl sm:text-3xl font-bold">{{ $totalPoliticalParties }}+</span>
+                <span class="text-2xl sm:text-3xl font-bold">{{ $totalFaculties }}+</span>
                 <span class="text-sm text-slate-600 dark:text-white/70">Facultades</span>
             </div>
 
             <div class="flex flex-col items-center gap-2 p-4 rounded-xl bg-white/70 dark:bg-white/10 backdrop-blur border border-slate-200 dark:border-white/10 shadow-sm dark:shadow-none">
                 <flux:icon.users-round />
-                <span class="text-2xl sm:text-3xl font-bold">{{ $totalCandidates }}+</span>
-                <span class="text-sm text-slate-600 dark:text-white/70">Docentes</span>
+                <span class="text-2xl sm:text-3xl font-bold">{{ $totalPrograms }}+</span>
+                <span class="text-sm text-slate-600 dark:text-white/70">Programas académicos</span>
             </div>
         </div>
     </div>

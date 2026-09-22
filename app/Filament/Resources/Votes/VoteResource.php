@@ -18,6 +18,11 @@ use Filament\Tables\Table;
 
 class VoteResource extends Resource
 {
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
+
     protected static ?string $model = Vote::class;
 
     protected static ?int $navigationSort = 50;
