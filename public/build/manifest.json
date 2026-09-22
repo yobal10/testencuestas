@@ -1,0 +1,33 @@
+{
+  "public/fonts/OpenSans/OpenSans-Bold.woff2": {
+    "file": "assets/OpenSans-Bold-aMggd1d0.woff2",
+    "src": "public/fonts/OpenSans/OpenSans-Bold.woff2"
+  },
+  "public/fonts/OpenSans/OpenSans-Medium.woff2": {
+    "file": "assets/OpenSans-Medium-DT2MQ8bG.woff2",
+    "src": "public/fonts/OpenSans/OpenSans-Medium.woff2"
+  },
+  "public/fonts/OpenSans/OpenSans-Regular.woff2": {
+    "file": "assets/OpenSans-Regular-BQse7FS0.woff2",
+    "src": "public/fonts/OpenSans/OpenSans-Regular.woff2"
+  },
+  "public/fonts/OpenSans/OpenSans-SemiBold.woff2": {
+    "file": "assets/OpenSans-SemiBold-CkRIq7jE.woff2",
+    "src": "public/fonts/OpenSans/OpenSans-SemiBold.woff2"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-xgclofmE.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-l0sNRNKZ.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
