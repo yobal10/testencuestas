@@ -97,7 +97,7 @@
 
             {{-- Paginación --}}
             <div class="mt-12">
-                {{ $this->polls->links() }}
+                {{ $this->surveys->links() }}
             </div>
         </div>
     </div>
