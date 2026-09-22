@@ -19,6 +19,12 @@
         </div>
     @else
         <form wire:submit="submit" class="space-y-5">
+            @error('submission')
+                <div class="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-100">
+                    {{ $message }}
+                </div>
+            @enderror
+
             @foreach($survey->questions as $question)
                 <section class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                     <label class="block text-base font-semibold text-slate-900 dark:text-white">
