@@ -37,12 +37,16 @@
             <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
                 <div class="border-b border-slate-200 dark:border-slate-700">
                     <nav class="flex flex-wrap -mb-px">
-                        <button @click="activeTab = 'encuestas'" :class="activeTab === 'encuestas' ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400' : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600'" class="w-full sm:w-auto flex-1 sm:flex-none py-4 px-6 text-center border-b-2 font-medium text-sm transition-colors">
-                            Encuestas
-                        </button>
-                        <button @click="activeTab = 'proceso'" :class="activeTab === 'proceso' ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400' : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 hover:border-slate-300 dark:hover:border-slate-600'" class="w-full sm:w-auto flex-1 sm:flex-none py-4 px-6 text-center border-b-2 font-medium text-sm transition-colors">
-                            Proceso
-                        </button>
+//----------------------
+<button
+    type="button"
+    @click="activeTab = 'encuestas'"
+>
+<button
+    type="button"
+    @click="activeTab = 'proceso'"
+>
+//-----------------
                     </nav>
                 </div>
 

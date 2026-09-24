@@ -82,9 +82,15 @@
                             </div>
 
                             <div class="mt-auto flex gap-2">
-                                <flux:button type="button" icon="eye" variant="primary" href="{{ route('polls.show', $poll->slug) }}" class="w-full" wire:navigate>
-                                    Ver Encuesta
-                                </flux:button>
+//----------------------
+<a
+    href="{{ route('polls.show', $poll->slug) }}"
+    class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-700 px-4 py-3 font-semibold text-white transition hover:bg-indigo-600"
+>
+    <flux:icon.eye class="h-5 w-5" />
+    Ver encuesta
+</a>
+//--------------------
                             </div>
                         </div>
                     </div>
