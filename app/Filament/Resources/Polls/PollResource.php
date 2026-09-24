@@ -20,6 +20,16 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PollResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Encuestas universitarias';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Encuestas universitarias';
+    }
+
     protected static ?string $model = Poll::class;
 
     protected static ?int $navigationSort = 30;

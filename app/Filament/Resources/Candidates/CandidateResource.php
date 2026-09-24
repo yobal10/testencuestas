@@ -18,6 +18,16 @@ use Filament\Tables\Table;
 
 class CandidateResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Docentes y responsables';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Gestión académica';
+    }
+
     protected static ?string $model = Candidate::class;
 
     protected static ?int $navigationSort = 40;

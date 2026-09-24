@@ -18,6 +18,16 @@ use Filament\Tables\Table;
 
 class PoliticalPartyResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Programas académicos';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Gestión académica';
+    }
+
     protected static ?string $model = PoliticalParty::class;
 
     protected static ?int $navigationSort = 20;

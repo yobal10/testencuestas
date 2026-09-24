@@ -18,6 +18,16 @@ use Filament\Tables\Table;
 
 class VoteResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Respuestas';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Encuestas universitarias';
+    }
+
     protected static ?string $model = Vote::class;
 
     protected static ?int $navigationSort = 50;

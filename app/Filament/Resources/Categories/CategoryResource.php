@@ -16,6 +16,16 @@ use Filament\Tables\Table;
 
 class CategoryResource extends Resource
 {
+    public static function getNavigationLabel(): string
+    {
+        return 'Facultades';
+    }
+
+    public static function getNavigationGroup(): ?string
+    {
+        return 'Gestión académica';
+    }
+
     protected static ?string $model = Category::class;
 
     protected static ?int $navigationSort = 10;
