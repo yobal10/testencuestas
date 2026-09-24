@@ -20,11 +20,6 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PollResource extends Resource
 {
-    public static function shouldRegisterNavigation(): bool
-    {
-        return false;
-    }
-
     protected static ?string $model = Poll::class;
 
     protected static ?int $navigationSort = 30;

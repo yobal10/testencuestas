@@ -16,11 +16,6 @@ use Filament\Tables\Table;
 
 class CategoryResource extends Resource
 {
-    public static function shouldRegisterNavigation(): bool
-    {
-        return false;
-    }
-
     protected static ?string $model = Category::class;
 
     protected static ?int $navigationSort = 10;
