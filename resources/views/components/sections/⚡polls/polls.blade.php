@@ -4,16 +4,14 @@
             <span class="mb-4 inline-block rounded-full bg-indigo-100 px-4 py-1 text-sm font-semibold text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">Participacion universitaria</span>
             <h2 class="text-3xl font-bold text-slate-900 dark:text-white lg:text-4xl">Encuestas que convierten opiniones en mejoras</h2>
         </div>
-        //----------------
         <a
-    href="{{ route('polls.show', $survey->slug) }}"
-    class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-700 px-4 py-3 font-semibold text-white transition hover:bg-indigo-600"
->
-    Responder encuesta
-
-    <flux:icon.arrow-right class="h-5 w-5" />
-</a>
-//-----------------------
+            href="{{ route('polls') }}"
+            wire:navigate
+            class="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-3 font-semibold text-slate-800 transition hover:bg-slate-50 dark:border-slate-700 dark:text-white dark:hover:bg-slate-800"
+        >
+            Explorar encuestas
+            <flux:icon.arrow-right class="h-5 w-5" />
+        </a>
     </div>
 
     <div class="grid gap-8 md:grid-cols-2">
@@ -32,16 +30,14 @@
                         <span class="inline-flex items-center gap-1"><flux:icon.building-2 class="h-4 w-4" />{{ $survey->faculty?->name ?? 'Institucional' }}</span>
                         <span class="inline-flex items-center gap-1"><flux:icon.calendar-1 class="h-4 w-4" />{{ $survey->period?->name ?? 'Periodo vigente' }}</span>
                     </div>
-                    //-------------------
                     <flux:button
-    href="{{ route('polls.show', $survey->slug) }}"
-    wire:navigate
-    class="mt-auto w-full"
-    icon="arrow-right"
->
-    Responder encuesta
-</flux:button>
-//-----------------------
+                        href="{{ route('polls.show', $survey->slug) }}"
+                        wire:navigate
+                        class="mt-auto w-full"
+                        icon="arrow-right"
+                    >
+                        Responder encuesta
+                    </flux:button>
                 </div>
             </article>
         @empty
