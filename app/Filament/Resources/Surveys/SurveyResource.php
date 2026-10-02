@@ -64,7 +64,13 @@ class SurveyResource extends Resource
             TextColumn::make('title')->label('Encuesta')->searchable()->sortable(),
             TextColumn::make('survey_type_label')->label('Tipo'),
             TextColumn::make('faculty.name')->label('Facultad')->placeholder('Institucional'),
-            TextColumn::make('status')->label('Estado')->badge(),
+            TextColumn::make('status')->label('Estado')->badge()->formatStateUsing(fn (string $state): string => match ($state) {
+                'draft' => 'Borrador',
+                'published' => 'Publicada',
+                'active' => 'Activa',
+                'closed' => 'Cerrada',
+                default => $state,
+            }),
             TextColumn::make('closes_at')->label('Cierre')->dateTime('d/m/Y H:i')->placeholder('Sin fecha'),
             IconColumn::make('is_anonymous')->label('Anónima')->boolean(),
         ])->recordActions([EditAction::make(), DeleteAction::make()]);

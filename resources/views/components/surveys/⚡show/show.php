@@ -16,7 +16,7 @@ new class extends Component
 
     public function mount(Survey $survey): void
     {
-        abort_unless(in_array($survey->status, ['published', 'active'], true), 404);
+        abort_unless($survey->acceptsResponses(), 404);
 
         $this->survey = $survey->load(['faculty', 'program', 'period', 'questions']);
     }
@@ -27,10 +27,26 @@ new class extends Component
             return;
         }
 
+        if (! $this->survey->acceptsResponses()) {
+            $this->addError('submission', 'El periodo para responder esta encuesta ya no está disponible.');
+
+            return;
+        }
+
+        if (! $this->survey->is_anonymous && ! auth()->check()) {
+            $this->addError('submission', 'Inicia sesión para enviar una respuesta identificada.');
+
+            return;
+        }
+
         $rules = [];
 
         foreach ($this->survey->questions as $question) {
-            $rules["answers.{$question->id}"] = $question->is_required ? ['required'] : ['nullable'];
+            $rules["answers.{$question->id}"] = match ($question->question_type) {
+                'rating' => [$question->is_required ? 'required' : 'nullable', 'integer', 'between:1,5'],
+                'text' => [$question->is_required ? 'required' : 'nullable', 'string', 'max:5000'],
+                default => [$question->is_required ? 'required' : 'nullable'],
+            };
         }
 
         $this->validate($rules);

@@ -52,7 +52,12 @@ class AcademicProgramResource extends Resource
         return $table->columns([
             TextColumn::make('name')->label('Programa')->searchable()->sortable(),
             TextColumn::make('faculty.name')->label('Facultad')->searchable()->sortable(),
-            TextColumn::make('degree_level')->label('Nivel')->badge(),
+            TextColumn::make('degree_level')->label('Nivel')->badge()->formatStateUsing(fn (string $state): string => match ($state) {
+                'pregrado' => 'Pregrado',
+                'posgrado' => 'Posgrado',
+                'segunda_especialidad' => 'Segunda especialidad',
+                default => $state,
+            }),
             IconColumn::make('is_active')->label('Activo')->boolean(),
         ])->recordActions([EditAction::make(), DeleteAction::make()]);
     }

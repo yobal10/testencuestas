@@ -60,7 +60,11 @@ class UniversityMemberResource extends Resource
             TextColumn::make('faculty.name')->label('Facultad')->placeholder('—'),
             TextColumn::make('program.name')->label('Programa')->placeholder('—'),
             TextColumn::make('institutional_code')->label('Código')->searchable()->placeholder('—'),
-            TextColumn::make('status')->label('Estado')->badge(),
+            TextColumn::make('status')->label('Estado')->badge()->formatStateUsing(fn (string $state): string => match ($state) {
+                'active' => 'Activo',
+                'inactive' => 'Inactivo',
+                default => $state,
+            }),
         ])->recordActions([EditAction::make(), DeleteAction::make()]);
     }
 

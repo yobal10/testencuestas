@@ -2,9 +2,8 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Poll;
+use App\Models\Survey;
 use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
-use Filament\Actions\BulkActionGroup;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Filament\Widgets\TableWidget;
@@ -15,7 +14,7 @@ class ActivePollsTable extends TableWidget
     use HasWidgetShield;
 
     protected static bool $isLazy = true;
-    protected static ?string $heading = 'Encuestas Activas';
+    protected static ?string $heading = 'Encuestas universitarias';
     protected static ?int $sort = 4;
     protected int | string | array $columnSpan = 'full';
 
@@ -23,54 +22,51 @@ class ActivePollsTable extends TableWidget
     {
         return $table
             ->query(fn(): Builder =>
-            Poll::query()
-                ->where('status', 'activo')
-                ->withCount('votes')
-                ->orderBy('votes_count', 'desc'))
+            Survey::query()
+                ->availableForResponses()
+                ->withCount(['responses' => fn ($query) => $query->where('status', 'submitted')])
+                ->orderByDesc('responses_count'))
             ->columns([
                 TextColumn::make('title')
                     ->label('Encuesta')
                     ->searchable()
                     ->limit(50),
 
-                TextColumn::make('category.name')
-                    ->label('Categoría')
+                TextColumn::make('survey_type_label')
+                    ->label('Tipo de evaluación')
                     ->badge(),
 
-                TextColumn::make('votes_count')
-                    ->label('Total Votos')
+                TextColumn::make('period.name')
+                    ->label('Periodo académico')
+                    ->placeholder('Sin periodo asignado'),
+
+                TextColumn::make('responses_count')
+                    ->label('Respuestas')
                     ->sortable()
                     ->alignCenter(),
 
-                TextColumn::make('ends_at')
+                TextColumn::make('closes_at')
                     ->label('Finaliza')
                     ->dateTime('d/m/Y H:i')
-                    ->sortable(),
+                    ->sortable()
+                    ->placeholder('Sin fecha'),
 
                 TextColumn::make('status')
                     ->label('Estado')
                     ->badge()
-                    ->color(fn(string $state): string => match ($state) {
-                        'activo' => 'success',
-                        'borrador' => 'info',
-                        'cerrado' => 'danger',
-                        'archivado' => 'info',
+                    ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'published' => 'Publicada',
+                        'active' => 'Activa',
+                        default => $state,
+                    })
+                    ->color(fn (string $state): string => match ($state) {
+                        'published', 'active' => 'success',
+                        'draft' => 'gray',
+                        'closed' => 'danger',
                         default => 'gray',
                     }),
             ])
-            ->filters([
-                //
-            ])
-            ->headerActions([
-                //
-            ])
-            ->recordActions([
-                //
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    //
-                ]),
-            ]);
+            ->defaultSort('responses_count', 'desc')
+            ->recordUrl(fn (Survey $record): string => \App\Filament\Resources\Surveys\SurveyResource::getUrl('edit', ['record' => $record]));
     }
 }

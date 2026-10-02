@@ -27,7 +27,7 @@ Route::get('/sitemap.xml', function () {
         ->add(Url::create('/terminos-y-condiciones'));
 
     foreach (App\Models\Survey::whereIn('status', ['published', 'active'])->select(['id', 'slug', 'updated_at'])->cursor() as $survey) {
-        $sitemap->add(Url::create(route('polls.show', $survey))
+        $sitemap->add(Url::create(route('polls.show', ['survey' => $survey->slug]))
             ->setLastModificationDate($survey->updated_at)
             ->setChangeFrequency(Url::CHANGE_FREQUENCY_HOURLY)
             ->setPriority(0.9));

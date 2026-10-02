@@ -45,7 +45,7 @@ new class extends Component
     #[Computed]
     public function surveys()
     {
-        return Survey::query()->whereIn('status', ['published', 'active'])
+        return Survey::query()->availableForResponses()
             ->when($this->search, fn ($q) =>
                 $q->where('title', 'like', "%{$this->search}%")
             )

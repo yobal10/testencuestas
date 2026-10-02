@@ -2,7 +2,7 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Vote;
+use App\Models\Survey;
 use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 use Filament\Widgets\ChartWidget;
 
@@ -11,25 +11,23 @@ class TopCandidatesChart extends ChartWidget
     use HasWidgetShield;
 
     protected static bool $isLazy = true;
-    protected ?string $heading = 'Top 5 Candidatos Más Votados';
+    protected ?string $heading = 'Encuestas con más respuestas';
     protected static ?int $sort = 5;
     protected int|string|array $columnSpan = 'full';
 
     protected function getData(): array
     {
-        $topCandidates = Vote::where('vote_type', 'válido')
-            ->selectRaw('candidate_id, COUNT(*) as votes')
-            ->groupBy('candidate_id')
-            ->orderByDesc('votes')
+        $topSurveys = Survey::query()
+            ->withCount(['responses' => fn ($query) => $query->where('status', 'submitted')])
+            ->orderByDesc('responses_count')
             ->limit(5)
-            ->with('candidate')
             ->get();
 
         return [
             'datasets' => [
                 [
-                    'label' => 'Votos',
-                    'data' => $topCandidates->pluck('votes')->toArray(),
+                    'label' => 'Respuestas',
+                    'data' => $topSurveys->pluck('responses_count')->toArray(),
                     'backgroundColor' => [
                         'rgba(59, 130, 246, 0.8)',
                         'rgba(16, 185, 129, 0.8)',
@@ -39,10 +37,7 @@ class TopCandidatesChart extends ChartWidget
                     ],
                 ],
             ],
-            'labels' => $topCandidates->map(
-                fn($item) =>
-                $item->candidate->name
-            )->toArray(),
+            'labels' => $topSurveys->pluck('title')->toArray(),
         ];
     }
 

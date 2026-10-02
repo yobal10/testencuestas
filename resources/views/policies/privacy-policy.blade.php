@@ -1,32 +1,32 @@
 <x-layouts::policies title="Política de Privacidad">
 
     <h2>1. Introducción</h2>
-    <p>En {{ $siteSettings['site_name'] }} respetamos tu privacidad y protegemos tus datos personales conforme a la legislación
+    <p>En {{ $siteSettings['site_name'] ?? config('app.name') }} respetamos tu privacidad y protegemos tus datos personales conforme a la legislación
         peruana vigente.</p>
 
-    <h2>2. Base Legal</h2>
-    <p>El tratamiento de datos personales se rige por la <strong>Ley N° 29733 – Ley de Protección de Datos
-            Personales</strong> y su Reglamento aprobado por <strong>D.S. N° 003-2013-JUS</strong>.</p>
+        <h2>2. Base legal</h2>
+        <p>El tratamiento de datos personales se rige por la <strong>Ley N.° 29733, Ley de Protección de Datos
+            Personales</strong>, y su reglamento vigente.</p>
 
     <h2>3. Datos que recopilamos</h2>
     <ul>
-        <li>Nombre o alias (si decides registrarte)</li>
-        <li>Correo electrónico</li>
-        <li>Información de uso de la plataforma (votos, interacciones)</li>
-        <li>Dirección IP y datos técnicos de navegación</li>
+        <li>Nombres y apellidos, correo electrónico y código institucional, cuando corresponda.</li>
+        <li>Facultad, programa académico y tipo de participante, si se registran en el perfil.</li>
+        <li>Respuestas y datos de participación asociados a cada encuesta.</li>
     </ul>
 
     <h2>4. Finalidad del tratamiento</h2>
     <p>Los datos se utilizan para:</p>
     <ul>
         <li>Permitir la participación en encuestas</li>
-        <li>Evitar fraudes o votos duplicados</li>
-        <li>Mejorar la experiencia del usuario</li>
-        <li>Generar estadísticas anónimas</li>
+        <li>Organizar la participación de estudiantes, docentes y personal universitario.</li>
+        <li>Analizar la experiencia académica y proponer mejoras en cursos y servicios.</li>
+        <li>Elaborar reportes institucionales; las respuestas se tratarán como anónimas solo cuando la encuesta así lo indique.</li>
     </ul>
 
     <h2>5. Consentimiento</h2>
-    <p>El usuario otorga consentimiento libre, previo, informado e inequívoco al aceptar esta política.</p>
+    <p>Antes de participar, revisa si la encuesta es anónima y qué información solicita. No incluyas datos personales
+        sensibles en respuestas abiertas.</p>
 
     <h2>6. Conservación de datos</h2>
     <p>Los datos se conservarán solo durante el tiempo necesario para cumplir las finalidades descritas o según lo exija
@@ -35,8 +35,9 @@
     <h2>7. Seguridad</h2>
     <p>Aplicamos medidas técnicas y organizativas para proteger la información contra accesos no autorizados.</p>
 
-    <h2>8. Transferencias</h2>
-    <p>No vendemos ni transferimos datos personales a terceros sin consentimiento, salvo obligación legal.</p>
+    <h2>8. Derechos de la persona titular</h2>
+    <p>Puedes solicitar el ejercicio de tus derechos de acceso, rectificación, cancelación y oposición mediante los
+        canales de contacto institucionales indicados en esta plataforma, conforme a la normativa vigente.</p>
 
     <h2>9. Cambios a esta política</h2>
     <p>Nos reservamos el derecho de actualizar esta política conforme a cambios normativos.</p>

@@ -22,7 +22,7 @@ class CandidateExporter extends Exporter
             ExportColumn::make('poll.title')
                 ->label('Encuesta'),
             ExportColumn::make('politicalParty.name')
-                ->label('Partido Político'),
+                ->label('Partido político'),
             ExportColumn::make('number')
                 ->label('Número del Partido'),
             ExportColumn::make('created_at')

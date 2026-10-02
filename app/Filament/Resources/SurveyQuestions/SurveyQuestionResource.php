@@ -47,7 +47,11 @@ class SurveyQuestionResource extends Resource
         return $table->columns([
             TextColumn::make('survey.title')->label('Encuesta')->limit(35)->searchable(),
             TextColumn::make('prompt')->label('Pregunta')->limit(70)->searchable(),
-            TextColumn::make('question_type')->label('Tipo')->badge(),
+            TextColumn::make('question_type')->label('Tipo de respuesta')->badge()->formatStateUsing(fn (string $state): string => match ($state) {
+                'rating' => 'Escala de 1 a 5',
+                'text' => 'Respuesta abierta',
+                default => $state,
+            }),
             TextColumn::make('sort_order')->label('Orden')->sortable(),
             IconColumn::make('is_required')->label('Obligatoria')->boolean(),
         ])->recordActions([EditAction::make(), DeleteAction::make()]);

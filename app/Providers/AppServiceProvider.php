@@ -30,15 +30,17 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->configureDefaults();
 
-        $settings = SiteSettings::all();
+        if (! $this->app->runningInConsole()) {
+            $settings = SiteSettings::all();
 
-        View::share('siteSettings', $settings);
+            View::share('siteSettings', $settings);
 
-        if (! empty($settings)) {
-            config([
-                'app.name' => $settings['site_name'] ?? config('app.name'),
-                'mail.from.name' => $settings['site_name'] ?? config('mail.from.name'),
-            ]);
+            if (! empty($settings)) {
+                config([
+                    'app.name' => $settings['site_name'] ?? config('app.name'),
+                    'mail.from.name' => $settings['site_name'] ?? config('mail.from.name'),
+                ]);
+            }
         }
 
         Gate::policy(Role::class, RolePolicy::class);

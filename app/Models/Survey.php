@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -17,6 +18,20 @@ class Survey extends Model
     protected function casts(): array
     {
         return ['is_anonymous' => 'boolean', 'opens_at' => 'datetime', 'closes_at' => 'datetime', 'settings' => 'array'];
+    }
+
+    public function scopeAvailableForResponses(Builder $query): Builder
+    {
+        return $query->whereIn('status', ['published', 'active'])
+            ->where(fn (Builder $query) => $query->whereNull('opens_at')->orWhere('opens_at', '<=', now()))
+            ->where(fn (Builder $query) => $query->whereNull('closes_at')->orWhere('closes_at', '>=', now()));
+    }
+
+    public function acceptsResponses(): bool
+    {
+        return in_array($this->status, ['published', 'active'], true)
+            && (! $this->opens_at || $this->opens_at->lessThanOrEqualTo(now()))
+            && (! $this->closes_at || $this->closes_at->greaterThanOrEqualTo(now()));
     }
 
     public function getSurveyTypeLabelAttribute(): string

@@ -45,7 +45,12 @@ class AcademicPeriodResource extends Resource
         return $table->columns([
             TextColumn::make('name')->label('Periodo')->searchable()->sortable(), TextColumn::make('code')->label('Código'),
             TextColumn::make('starts_on')->label('Inicio')->date('d/m/Y'), TextColumn::make('ends_on')->label('Fin')->date('d/m/Y'),
-            TextColumn::make('status')->label('Estado')->badge(),
+            TextColumn::make('status')->label('Estado')->badge()->formatStateUsing(fn (string $state): string => match ($state) {
+                'planned' => 'Planificado',
+                'active' => 'Activo',
+                'closed' => 'Cerrado',
+                default => $state,
+            }),
         ])->recordActions([EditAction::make(), DeleteAction::make()]);
     }
     public static function getPages(): array { return ['index' => ListAcademicPeriods::route('/'), 'create' => CreateAcademicPeriod::route('/create'), 'edit' => EditAcademicPeriod::route('/{record}/edit')]; }

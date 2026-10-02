@@ -4,6 +4,15 @@ namespace App\Providers\Filament;
 
 use AchyutN\FilamentLogViewer\FilamentLogViewer;
 use Asmit\ResizedColumn\ResizedColumnPlugin;
+use App\Filament\Resources\AcademicCourses\AcademicCourseResource;
+use App\Filament\Resources\AcademicPeriods\AcademicPeriodResource;
+use App\Filament\Resources\AcademicPrograms\AcademicProgramResource;
+use App\Filament\Resources\Faculties\FacultyResource;
+use App\Filament\Resources\SurveyQuestions\SurveyQuestionResource;
+use App\Filament\Resources\SurveyResponses\SurveyResponseResource;
+use App\Filament\Resources\Surveys\SurveyResource;
+use App\Filament\Resources\UniversityMembers\UniversityMemberResource;
+use App\Filament\Resources\Users\UserResource;
 use Filament\Http\Middleware\Authenticate;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -42,7 +51,17 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
+            ->resources([
+                FacultyResource::class,
+                AcademicProgramResource::class,
+                AcademicCourseResource::class,
+                AcademicPeriodResource::class,
+                UniversityMemberResource::class,
+                SurveyResource::class,
+                SurveyQuestionResource::class,
+                SurveyResponseResource::class,
+                UserResource::class,
+            ])
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
                 Dashboard::class,
