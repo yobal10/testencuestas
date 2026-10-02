@@ -45,7 +45,7 @@
 
                             <div class="absolute top-4 left-4 flex flex-wrap gap-2 z-10">
                                 <span class="px-3 py-1 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur text-xs font-semibold text-slate-800 dark:text-white">
-                                    {{ str_replace('_', ' ', $poll->survey_type) }}
+                                    {{ $poll->survey_type_label }}
                                 </span>
                             </div>
 

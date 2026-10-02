@@ -5,7 +5,7 @@
         <flux:brand href="{{ route('home') }}" name="{{ $siteSettings['site_name'] ?? config('app.name') }}" class="max-md:hidden font-bold" wire:navigate />
 
         <flux:spacer />
-
+//-------------
         <flux:sidebar.nav variant="outline">
     <flux:sidebar.group>
 
@@ -42,6 +42,7 @@
         </flux:sidebar.item>
 
     </flux:sidebar.group>
+    //--------------------
 </flux:sidebar.nav>
 
         <flux:spacer />
@@ -56,7 +57,7 @@
         <flux:sidebar.header>
             <flux:sidebar.collapse class="md:hidden" />
         </flux:sidebar.header>
-q222222222
+//--------------------
         <flux:sidebar.nav variant="outline">
     <flux:sidebar.group>
 
@@ -95,4 +96,5 @@ q222222222
     </flux:sidebar.group>
 </flux:sidebar.nav>
     </flux:sidebar>
+//--------------------
 </div>

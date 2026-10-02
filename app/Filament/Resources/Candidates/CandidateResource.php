@@ -18,6 +18,11 @@ use Filament\Tables\Table;
 
 class CandidateResource extends Resource
 {
+    public static function shouldRegisterNavigation(): bool
+    {
+        return false;
+    }
+
     public static function getNavigationLabel(): string
     {
         return 'Docentes y responsables';

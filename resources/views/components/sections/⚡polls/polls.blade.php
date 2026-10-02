@@ -4,7 +4,16 @@
             <span class="mb-4 inline-block rounded-full bg-indigo-100 px-4 py-1 text-sm font-semibold text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-300">Participacion universitaria</span>
             <h2 class="text-3xl font-bold text-slate-900 dark:text-white lg:text-4xl">Encuestas que convierten opiniones en mejoras</h2>
         </div>
-        <flux:button href="{{ route('polls') }}" wire:navigate>Explorar encuestas <flux:icon.chevron-right class="h-5 w-5" /></flux:button>
+        //----------------
+        <a
+    href="{{ route('polls.show', $survey->slug) }}"
+    class="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-700 px-4 py-3 font-semibold text-white transition hover:bg-indigo-600"
+>
+    Responder encuesta
+
+    <flux:icon.arrow-right class="h-5 w-5" />
+</a>
+//-----------------------
     </div>
 
     <div class="grid gap-8 md:grid-cols-2">
@@ -13,7 +22,7 @@
                 <div class="relative h-40 overflow-hidden bg-linear-to-br from-indigo-100 via-white to-emerald-100 dark:from-slate-800 dark:via-slate-900 dark:to-emerald-950">
                     <div class="absolute -right-8 -top-12 h-40 w-40 rounded-full border-[18px] border-indigo-200/60 dark:border-indigo-400/10"></div>
                     <div class="absolute bottom-4 left-6 h-16 w-16 rounded-2xl bg-white/70 shadow-sm backdrop-blur dark:bg-white/10"></div>
-                    <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold capitalize text-slate-800 dark:bg-slate-900/90 dark:text-white">{{ str_replace('_', ' ', $survey->survey_type) }}</span>
+                    <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-slate-800 dark:bg-slate-900/90 dark:text-white">{{ $survey->survey_type_label }}</span>
                     <span class="absolute right-4 top-4 rounded-full bg-emerald-500 px-3 py-1 text-xs font-semibold text-white shadow">Disponible</span>
                 </div>
                 <div class="flex flex-1 flex-col p-6">
@@ -23,7 +32,16 @@
                         <span class="inline-flex items-center gap-1"><flux:icon.building-2 class="h-4 w-4" />{{ $survey->faculty?->name ?? 'Institucional' }}</span>
                         <span class="inline-flex items-center gap-1"><flux:icon.calendar-1 class="h-4 w-4" />{{ $survey->period?->name ?? 'Periodo vigente' }}</span>
                     </div>
-                    <flux:button href="{{ route('polls.show', $survey->slug) }}" wire:navigate class="mt-auto w-full" icon="arrow-right">Responder encuesta</flux:button>
+                    //-------------------
+                    <flux:button
+    href="{{ route('polls.show', $survey->slug) }}"
+    wire:navigate
+    class="mt-auto w-full"
+    icon="arrow-right"
+>
+    Responder encuesta
+</flux:button>
+//-----------------------
                 </div>
             </article>
         @empty

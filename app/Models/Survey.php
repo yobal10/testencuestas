@@ -19,6 +19,29 @@ class Survey extends Model
         return ['is_anonymous' => 'boolean', 'opens_at' => 'datetime', 'closes_at' => 'datetime', 'settings' => 'array'];
     }
 
+    public function getSurveyTypeLabelAttribute(): string
+    {
+        return match ($this->survey_type) {
+            'student_experience' => 'Experiencia estudiantil',
+            'teacher_evaluation' => 'Evaluación docente',
+            'course_evaluation' => 'Evaluación de curso',
+            'service_evaluation' => 'Evaluación de servicios',
+            'institutional' => 'Institucional',
+            default => 'Encuesta universitaria',
+        };
+    }
+
+    public function getAudienceLabelAttribute(): string
+    {
+        return match ($this->audience) {
+            'students' => 'Estudiantes',
+            'teachers' => 'Docentes',
+            'staff' => 'Personal administrativo',
+            'all' => 'Comunidad universitaria',
+            default => 'Comunidad universitaria',
+        };
+    }
+
     public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
