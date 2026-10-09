@@ -1,5 +1,6 @@
 <div class="w-full">
-    <flux:header container class="sticky top-0 z-50 border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 flex items-center">
+    <div class="sticky top-0 z-50 w-full">
+    <flux:header container class="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 flex items-center">
         <flux:sidebar.toggle class="md:hidden" icon="bars-2" inset="left" />
 
         <flux:brand href="{{ route('home') }}" name="{{ $siteSettings['site_name'] ?? config('app.name') }}" class="max-md:hidden font-bold" wire:navigate />
@@ -31,6 +32,7 @@
             <flux:spacer />
         </flux:navbar>
     </flux:header>
+    </div>
 
     <flux:sidebar collapsible="mobile" sticky class="md:hidden border-r border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
         <flux:sidebar.header>
