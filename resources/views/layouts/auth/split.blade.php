@@ -12,7 +12,7 @@
                             <x-app-logo-icon class="size-9 fill-current text-black dark:text-white" />
                         </span>
 
-                        <span class="sr-only">{{  $siteSettings['site_name'] ?? config('app.name') }}</span>
+                        <span class="sr-only">Campo Universitario</span>
                     </a>
                     {{ $slot }}
                 </div>
@@ -25,7 +25,7 @@
                         <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm ring-1 ring-white/20">
                             <x-app-logo-icon class="h-7 fill-current text-white" />
                         </span>
-                        <span class="ms-3">{{ $siteSettings['site_name'] ?? config('app.name') }}</span>
+                        <span class="ms-3">Campo Universitario</span>
                     </a>
 
                     <div class="max-w-md space-y-6">
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="relative z-10 text-sm text-slate-200/80">
-                        © {{ date('Y') }} {{ $siteSettings['site_name'] ?? config('app.name') }}
+                        © {{ date('Y') }} Campo Universitario
                     </div>
                 </div>
             </div>
