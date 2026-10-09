@@ -37,7 +37,6 @@
             <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl overflow-hidden">
                 <div class="border-b border-slate-200 dark:border-slate-700">
                     <nav class="flex flex-wrap -mb-px">
-//----------------------
 <button
     type="button"
     @click="activeTab = 'encuestas'"
@@ -46,7 +45,6 @@
     type="button"
     @click="activeTab = 'proceso'"
 >
-//-----------------
                     </nav>
                 </div>
 
